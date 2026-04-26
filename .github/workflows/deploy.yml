@@ -21,7 +21,9 @@ jobs:
         run: npm install
       - name: Generate Prisma Client
         run: npx prisma generate
+      - name: Push Database Schema (SQLite)
+        run: npx prisma db push --accept-data-loss
       - name: Build Next.js app
         run: npm run build
         env:
-          DATABASE_URL: "file:./dev.db" # Using SQLite for build check
+          DATABASE_URL: "file:./dev.db"
