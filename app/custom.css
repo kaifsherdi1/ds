@@ -103,6 +103,19 @@ svg path[fill="#F44E19"] {
     padding-bottom: 0 !important;
 }
 
+/* Force sticky header to black */
+.rr-sticky, 
+.header-1.rr-sticky,
+.header-1.rr-sticky .header__main,
+.header-1.rr-sticky .header__main-inner {
+    background-color: #15181B !important;
+    background: #15181B !important;
+}
+
+.rr-sticky .header__logo {
+    background: white !important;
+}
+
 /* Force decorative elements to green */
 .left-separetor,
 .right-separetor {

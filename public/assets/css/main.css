@@ -6534,7 +6534,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   border-top: 0;
-  background-color: var(--rr-theme-secondary);
+  background-color: #15181B;
   -webkit-box-shadow: 0px 2px 4px rgba(29, 29, 29, 0.14);
   box-shadow: 0px 2px 4px rgba(29, 29, 29, 0.14);
 }
