@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export default function Header({ store }) {
   return (
-    <header className="header header-1 theme-bg-heading-primary sticky-header" id="header-sticky">
+    <header className="header header-1 sticky-header" id="header-sticky" style={{ backgroundColor: '#000000', transition: 'all 0.3s ease' }}>
         <div className="container">
-            <div className="d-flex align-items-center justify-content-between py-3">
-                <Link href="/">
-                    <img src="/images/dukaan-setu-logo.png" alt="Logo" style={{maxHeight: '50px'}} />
+            <div className="d-flex align-items-center justify-content-between py-1">
+                <Link href="/" className="d-block" style={{ overflow: 'visible' }}>
+                    <img src="/images/dukaan-setu-logo.png" alt="Logo" style={{ height: '80px', width: 'auto', objectFit: 'contain', transform: 'scale(1.6)', transformOrigin: 'left center', display: 'block', marginLeft: '10px' }} />
                 </Link>
                 <nav>
                     <ul className="d-flex align-items-center mb-0 gap-4" style={{listStyle: 'none'}}>
