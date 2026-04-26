@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: "file:./dev.db"
 
     steps:
       - uses: actions/checkout@v4
@@ -25,5 +27,3 @@ jobs:
         run: npx prisma db push --accept-data-loss
       - name: Build Next.js app
         run: npm run build
-        env:
-          DATABASE_URL: "file:./dev.db"
