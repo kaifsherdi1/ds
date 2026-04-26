@@ -7,7 +7,7 @@ export default function Skills({ store }) {
                 <div className="row align-items-center">
                     <div className="col-xl-6">
                         <div className="section__title-wrapper text-center text-xl-start rr-mb-60-lg">
-                            <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" class="left-separetor"></span>Our Commitment</span>
+                            <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" className="left-separetor"></span>Our Commitment</span>
                             <h2 className="section__title title-animation text-capitalize mb-15 mb-xs-10">We Deliver Excellence <br /> To Your Door.</h2>
                             <p className="mb-30 mb-xs-20">At {store.name}, we are committed to providing the highest quality groceries at the best prices. Our team works tirelessly to ensure your satisfaction with every order.</p>
 

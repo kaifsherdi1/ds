@@ -5,7 +5,7 @@ export default function Blog({ store }) {
                 <div className="row mb-60 mb-sm-40 mb-xs-35 align-items-lg-end align-items-center">
                     <div className="col-xl-6">
                         <div className="section__title-wrapper text-center text-xl-start">
-                            <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" class="left-separetor"></span>Shop News</span>
+                            <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" className="right-separetor"></span>Shop News</span>
                             <h2 className="section__title title-animation text-capitalize mb-0">Latest Offers & Store Updates</h2>
                         </div>
                     </div>

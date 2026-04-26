@@ -233,22 +233,33 @@ svg rect[fill="#F44E19"] {
     width: 55%;
     display: flex;
     flex-direction: column;
-    padding: 20px 40px 40px 40px; /* Adjusted top padding */
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
     position: relative;
 }
 
 .auth-logo-top {
+    display: none; /* Logo is now inside illustration content */
+}
+
+.auth-illus-wrapper {
+    position: relative;
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .auth-logo-img {
-    height: 180px; /* Increased size as requested */
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 180px;          /* Larger logo */
     width: auto;
     object-fit: contain;
+    z-index: 2;
 }
 
 .auth-logo-img-mobile {
@@ -258,14 +269,17 @@ svg rect[fill="#F44E19"] {
 }
 
 .auth-logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .auth-illustration-content {
-    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;  /* Push group toward bottom of panel */
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
     animation: illustrationFadeIn 1s ease-out 0.2s both;
 }
 
@@ -277,8 +291,9 @@ svg rect[fill="#F44E19"] {
 .auth-main-img {
     width: 100%;
     height: auto;
-    max-height: 550px;
+    max-height: 500px;
     object-fit: contain;
+    display: block;
 }
 
 .auth-form-container {
@@ -454,6 +469,14 @@ svg rect[fill="#F44E19"] {
     .auth-illustration-container {
         padding: 30px;
         order: 1;
+        align-items: center;
+    }
+    .auth-logo-top {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .auth-illustration-content {
+        align-items: center;
     }
     .auth-form-container {
         padding: 40px;

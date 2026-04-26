@@ -5,7 +5,7 @@ export default function Team({ store }) {
                 <div className="row">
                     <div className="col-12">
                         <div className="section__title-wrapper text-center mb-60 mb-sm-40 mb-xs-35">
-                            <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" class="left-separetor"></span>Our Staff<span data-width="40px" class="right-separetor"></span></span>
+                            <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" className="left-separetor"></span>Our Staff<span data-width="40px" className="right-separetor"></span></span>
                             <h2 className="section__title title-animation text-capitalize">The Faces Behind <br /> {store.name}</h2>
                         </div>
                     </div>

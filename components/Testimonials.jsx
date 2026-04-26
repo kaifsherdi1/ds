@@ -6,7 +6,7 @@ export default function Testimonials({ store }) {
                 <div className="row position-relative z-99">
                     <div className="col-12">
                         <div className="section__title-wrapper text-center mb-60 mb-sm-40 mb-xs-35">
-                            <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" class="left-separetor"></span>Testimonial<span data-width="40px" class="right-separetor"></span></span>
+                            <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" className="left-separetor"></span>Testimonial<span data-width="40px" className="right-separetor"></span></span>
                             <h2 className="section__title title-animation text-capitalize">What Our Customers Think</h2>
                         </div>
 

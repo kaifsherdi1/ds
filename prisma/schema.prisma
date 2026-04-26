@@ -20,6 +20,7 @@ model Store {
   products    Product[]
   categories  Category[]
   orders      Order[]
+  customers   Customer[]
   ledger      Ledger[]
   status      String    @default("PENDING") // PENDING, APPROVED, REJECTED
   
@@ -76,6 +77,19 @@ model Order {
   createdAt    DateTime @default(now())
 }
 
+model Customer {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  address     String?
+  storeId     String
+  store       Store    @relation(fields: [storeId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([phone, storeId])
+}
+
 model Ledger {
   id          String   @id @default(cuid())
   amount      Float
@@ -87,9 +101,11 @@ model Ledger {
 }
 
 model User {
-  id       String @id @default(cuid())
-  email    String @unique
-  password String
-  role     String @default("OWNER") // ADMIN, OWNER, MANAGER
-  storeId  String?
+  id        String @id @default(cuid())
+  email     String @unique
+  firstName String?
+  lastName  String?
+  password  String
+  role      String @default("OWNER") // ADMIN, OWNER, MANAGER
+  storeId   String?
 }

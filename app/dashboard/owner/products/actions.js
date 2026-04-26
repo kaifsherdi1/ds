@@ -5,7 +5,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // In a real app, you'd get the storeId from the session/auth
-const DEFAULT_STORE_SLUG = 'sharma-kirana';
+const DEFAULT_STORE_SLUG = 'kirana-global';
 
 async function getStore() {
   return await prisma.store.findUnique({
@@ -27,13 +27,25 @@ async function handleFileUpload(file) {
   return `/uploads/${filename}`;
 }
 
-export async function getProducts() {
+export async function getProducts(page = 1, pageSize = 10) {
   const store = await getStore();
-  if (!store) return [];
-  return await prisma.product.findMany({
-    where: { storeId: store.id },
-    orderBy: { createdAt: 'desc' }
-  });
+  if (!store) return { products: [], total: 0 };
+  
+  const skip = (page - 1) * pageSize;
+  
+  const [products, total] = await Promise.all([
+    prisma.product.findMany({
+      where: { storeId: store.id },
+      orderBy: { createdAt: 'desc' },
+      skip,
+      take: pageSize
+    }),
+    prisma.product.count({
+      where: { storeId: store.id }
+    })
+  ]);
+
+  return { products, total };
 }
 
 export async function createProduct(formData) {
@@ -108,4 +120,36 @@ export async function deleteProduct(id) {
   const store = await prisma.store.findUnique({ where: { id: product.storeId } });
   revalidatePath('/dashboard/owner/products');
   revalidatePath(`/shop/${store.slug}`);
+}
+
+export async function getAllProductsForExport() {
+  const store = await getStore();
+  if (!store) return [];
+  
+  return await prisma.product.findMany({
+    where: { storeId: store.id },
+    orderBy: { createdAt: 'desc' }
+  });
+}
+
+export async function bulkCreateProducts(productsList) {
+  const store = await getStore();
+  if (!store) throw new Error('Store not found');
+
+  const formattedProducts = productsList.map(p => ({
+    name: p.name,
+    description: p.description || '',
+    price: parseFloat(p.price) || 0,
+    image: p.image || '',
+    category: p.category || 'Uncategorized',
+    storeId: store.id
+  }));
+
+  await prisma.product.createMany({
+    data: formattedProducts
+  });
+
+  revalidatePath('/dashboard/owner/products');
+  revalidatePath(`/shop/${store.slug}`);
+  return { success: true, count: formattedProducts.length };
 }

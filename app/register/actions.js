@@ -62,6 +62,8 @@ export async function registerStore(formData) {
         await prisma.user.create({
             data: {
                 email: email,
+                firstName: firstName,
+                lastName: lastName,
                 password: password, // Note: In production always hash passwords!
                 role: 'OWNER',
                 storeId: store.id

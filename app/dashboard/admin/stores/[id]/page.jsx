@@ -52,7 +52,7 @@ export default async function StoreDetails({ params }) {
 
                     <div className="row g-4">
                         <div className="col-xl-4 col-lg-5">
-                            <div className="card shadow-sm border-0 border-radius-16">
+                            <div className="card shadow-sm border-0 border-radius-16 mb-4">
                                 <div className="card-header bg-white py-20 px-30 border-0">
                                     <h5 className="mb-0 fw-bold text-success">Business Profile</h5>
                                 </div>
@@ -79,9 +79,75 @@ export default async function StoreDetails({ params }) {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="card shadow-sm border-0 border-radius-16">
+                                <div className="card-header bg-white py-20 px-30 border-0">
+                                    <h5 className="mb-0 fw-bold text-success">Store Location</h5>
+                                </div>
+                                <div className="card-body p-30 pt-0">
+                                    <div className="d-flex flex-column gap-3">
+                                        <div>
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-1">Address</label>
+                                            <p className="mb-0 fw-bold">{store.address || 'N/A'}</p>
+                                        </div>
+                                        <div>
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-1">City/State/Pin</label>
+                                            <p className="mb-0 fw-bold">{store.city}, {store.state} - {store.pincode}</p>
+                                        </div>
+                                        {store.latitude && (
+                                            <div>
+                                                <label className="text-muted small fw-bold text-uppercase d-block mb-1">Coordinates</label>
+                                                <p className="mb-0 fw-bold">{store.latitude}, {store.longitude}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="col-xl-8 col-lg-7">
+                            <div className="card shadow-sm border-0 border-radius-16 mb-4">
+                                <div className="card-header bg-white py-20 px-30 border-0">
+                                    <h5 className="mb-0 fw-bold text-success">Verification Documents</h5>
+                                </div>
+                                <div className="card-body p-30 pt-0">
+                                    <div className="row g-3">
+                                        <div className="col-sm-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">Business Type</label>
+                                            <p className="mb-0 fw-bold bg-light p-2 px-3 rounded">{store.businessType}</p>
+                                        </div>
+                                        <div className="col-sm-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">License Type</label>
+                                            <p className="mb-0 fw-bold bg-light p-2 px-3 rounded">{store.licenseType}</p>
+                                        </div>
+                                        <div className="col-md-3 col-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">Business Proof</label>
+                                            <div className="doc-preview bg-light rounded d-flex align-items-center justify-content-center" style={{height: '100px'}}>
+                                                {store.businessProofUrl ? <i className="fas fa-file-pdf fa-2x text-danger"></i> : 'N/A'}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-3 col-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">Shop Front</label>
+                                            <div className="doc-preview bg-light rounded d-flex align-items-center justify-content-center" style={{height: '100px'}}>
+                                                {store.shopFrontUrl ? <i className="fas fa-image fa-2x text-primary"></i> : 'N/A'}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-3 col-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">Shop Interior</label>
+                                            <div className="doc-preview bg-light rounded d-flex align-items-center justify-content-center" style={{height: '100px'}}>
+                                                {store.shopInteriorUrl ? <i className="fas fa-image fa-2x text-primary"></i> : 'N/A'}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-3 col-6">
+                                            <label className="text-muted small fw-bold text-uppercase d-block mb-2">Owner ID</label>
+                                            <div className="doc-preview bg-light rounded d-flex align-items-center justify-content-center" style={{height: '100px'}}>
+                                                {store.ownerIdProofUrl ? <i className="fas fa-id-card fa-2x text-success"></i> : 'N/A'}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="card shadow-sm border-0 border-radius-16 overflow-hidden">
                                 <div className="card-header bg-white py-20 px-30 border-0 d-flex justify-content-between align-items-center">
                                     <h5 className="mb-0 fw-bold text-success">Product Catalog</h5>
@@ -108,6 +174,11 @@ export default async function StoreDetails({ params }) {
                                                         <td className="text-end pe-30 fw-bold">₹{product.price}</td>
                                                     </tr>
                                                 ))}
+                                                {store.products.length === 0 && (
+                                                    <tr>
+                                                        <td colSpan="2" className="text-center py-40 text-muted">No products listed by this store</td>
+                                                    </tr>
+                                                )}
                                             </tbody>
                                         </table>
                                     </div>

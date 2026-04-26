@@ -4,7 +4,7 @@ export default function Brands({ store }) {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-12 text-center mb-60">
-                        <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" class="left-separetor"></span>Trusted Brands We Stock<span data-width="40px" class="right-separetor"></span></span>
+                        <span className="section__subtitle justify-content-center mb-13 ml-0"><span data-width="40px" className="left-separetor"></span>Trusted Brands We Stock<span data-width="40px" className="right-separetor"></span></span>
                     </div>
 
                     <div className="col-12">

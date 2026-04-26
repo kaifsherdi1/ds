@@ -90,13 +90,14 @@ export default function RegisterPage() {
             )}
 
             <div className="auth-card">
-                {/* Left Side - Illustration Panel (Same as previous design) */}
+                {/* Left Side - Illustration Panel */}
                 <div className="auth-illustration-container d-none d-lg-flex">
-                    <div className="auth-logo-top">
-                        <img src="/images/dukaan-setu-logo.png" alt="Dukkan Setu" className="auth-logo-img" />
-                    </div>
                     <div className="auth-illustration-content">
-                        <img src="/images/auth-illustration.png" alt="Onboarding" className="auth-main-img" />
+                        {/* Logo overlaid on top of the illustration */}
+                        <div className="auth-illus-wrapper">
+                            <img src="/images/dukaan-setu-logo.png" alt="Dukkan Setu" className="auth-logo-img" />
+                            <img src="/images/auth-illustration.png" alt="Onboarding" className="auth-main-img" />
+                        </div>
                     </div>
                 </div>
 

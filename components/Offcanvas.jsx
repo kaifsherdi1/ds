@@ -43,15 +43,15 @@ export default function Offcanvas({ store }) {
                         <div className="offcanvas__btn">
                             <div className="header__btn-wrap">
                                 <Link href="/register" className="rr-btn__header d-sm-none mb-10 w-100">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">Create Your Store</span>
-                                        <span class="text-two">Create Your Store</span>
+                                    <span className="btn-wrap">
+                                        <span className="text-one">Create Your Store</span>
+                                        <span className="text-two">Create Your Store</span>
                                     </span>
                                 </Link>
                                 <Link href="/login" className="rr-btn__header w-100">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">Merchant Login</span>
-                                        <span class="text-two">Merchant Login</span>
+                                    <span className="btn-wrap">
+                                        <span className="text-one">Merchant Login</span>
+                                        <span className="text-two">Merchant Login</span>
                                     </span>
                                 </Link>
                             </div>

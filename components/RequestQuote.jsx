@@ -7,7 +7,7 @@ export default function RequestQuote({ store }) {
                         <div className="request-a-quote__left">
                             <div className="request-a-quote__left-bg rr-upDown" style={{background: 'url(/assets/imgs/request-quote/bg.png)'}}></div>
                             <div className="section__title-wrapper text-center text-xl-start">
-                                <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" class="left-separetor"></span>Lets Talk</span>
+                                <span className="section__subtitle justify-content-start mb-13"><span data-width="40px" className="left-separetor"></span>Lets Talk</span>
                                 <h2 className="section__title title-animation mb-20">Have a Big Order or Query? Contact With Us</h2>
                                 <p className="des mb-35">Whether you want to order in bulk for a function or have questions about our monthly ration plans, we are here to help.</p>
 
@@ -44,9 +44,9 @@ export default function RequestQuote({ store }) {
                                     </div>
                                     <div className="col-12">
                                         <button type="submit" className="rr-btn">
-                                            <span class="btn-wrap">
-                                                <span class="text-one">Submit Message</span>
-                                                <span class="text-two">Submit Message</span>
+                                            <span className="btn-wrap">
+                                                <span className="text-one">Submit Message</span>
+                                                <span className="text-two">Submit Message</span>
                                             </span>
                                         </button>
                                     </div>

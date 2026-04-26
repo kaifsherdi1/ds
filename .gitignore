@@ -6,8 +6,15 @@
 # Testing
 /coverage
 
+# Prisma
+/prisma/dev.db
+/prisma/dev.db-journal
+/prisma/sqlite.db
+/prisma/sqlite.db-journal
+
 # Next.js
 /.next/
+/.next_temp/
 /out/
 
 # Production
@@ -32,19 +39,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
-
-# Prisma
-/prisma/sqlite.db
-/prisma/sqlite.db-journal
-
-# OS Specific
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
 # IDEs and Editors
 .visualstudio

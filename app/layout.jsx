@@ -29,6 +29,12 @@ export default function RootLayout({ children }) {
         <Script src="/assets/js/vendor/bootstrap.bundle.min.js" strategy="lazyOnload" />
         <Script src="/assets/js/plugins/swiper.min.js" strategy="lazyOnload" />
         <Script src="/assets/js/plugins/wow.js" strategy="lazyOnload" />
+        <Script src="/assets/js/plugins/meanmenu.min.js" strategy="lazyOnload" />
+        <Script src="/assets/js/plugins/nice-select.min.js" strategy="lazyOnload" />
+        <Script src="/assets/js/plugins/odometer.min.js" strategy="lazyOnload" />
+        <Script src="/assets/js/plugins/jquery.carouselTicker.js" strategy="lazyOnload" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js" strategy="beforeInteractive" />
         <Script src="/assets/js/main.js" strategy="lazyOnload" />
       </body>
     </html>
